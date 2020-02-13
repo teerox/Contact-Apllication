@@ -25,7 +25,7 @@
                 <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
             </intent-filter>
         </receiver>
-        <activity android:name=".MainActivity">
+        <activity android:name=".userinterface.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
