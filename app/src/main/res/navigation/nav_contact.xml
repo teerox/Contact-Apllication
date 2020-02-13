@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_contact">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_contact"
+    app:startDestination="@id/displayAllContactFragment">
 
+    <fragment
+        android:id="@+id/displayAllContactFragment"
+        android:name="com.example.contactapplication.userinterface.DisplayAllContactFragment"
+        android:label="DisplayAllContactFragment"
+        tools:layout="@layout/fragment_recycler_view"
+        >
+        <action
+            android:id="@+id/action_displayAllContactFragment_to_singleContactFragment"
+            app:destination="@id/singleContactFragment" />
+        <action
+            android:id="@+id/action_displayAllContactFragment_to_addContactFragment"
+            app:destination="@id/addContactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleContactFragment"
+        android:name="com.example.contactapplication.userinterface.SingleContactFragment"
+        android:label="SingleContactFragment"
+        tools:layout="@layout/fragment_single_contact"
+        >
+        <argument
+            android:name="contact"
+            app:argType="com.example.contactapplication.model.Contact" />
+    </fragment>
+    <fragment
+        android:id="@+id/addContactFragment"
+        android:name="com.example.contactapplication.userinterface.AddContactFragment"
+        android:label="AddContactFragment"
+        tools:layout="@layout/fragment_addcontact"
+        />
 </navigation>
